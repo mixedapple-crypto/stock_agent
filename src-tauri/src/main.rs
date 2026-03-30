@@ -7,7 +7,11 @@ use std::collections::HashMap;
 // --- Helper Functions ---
 
 fn get_env(key: &str) -> String {
-    std::env::var(key).unwrap_or_else(|_| "".to_string())
+    match key {
+        "GEMINI_API_KEY" => option_env!("GEMINI_API_KEY").map(|s| s.to_string()).unwrap_or_else(|| std::env::var(key).unwrap_or_else(|_| "".to_string())),
+        "FINNHUB_API_KEY" => option_env!("FINNHUB_API_KEY").map(|s| s.to_string()).unwrap_or_else(|| std::env::var(key).unwrap_or_else(|_| "".to_string())),
+        _ => std::env::var(key).unwrap_or_else(|_| "".to_string()),
+    }
 }
 
 async fn call_gemini(client: &Client, system_instruction: &str, prompt: &str) -> Result<String, String> {
