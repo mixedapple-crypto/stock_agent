@@ -1,0 +1,30 @@
+{
+  "productName": "stock_agent",
+  "version": "0.1.0",
+  "identifier": "com.stockagent.dev",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Stock Agent",
+        "width": 800,
+        "height": 700,
+        "minWidth": 600,
+        "minHeight": 500
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "icon": [
+      "icons/icon.ico"
+    ]
+  }
+}
