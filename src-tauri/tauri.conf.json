@@ -1,5 +1,5 @@
 {
-  "productName": "stock_agent",
+  "productName": "StockAgent",
   "version": "0.1.0",
   "identifier": "com.stockagent.dev",
   "build": {
@@ -23,6 +23,8 @@
     }
   },
   "bundle": {
+    "active": true,
+    "targets": "all",
     "icon": [
       "icons/icon.ico"
     ]
